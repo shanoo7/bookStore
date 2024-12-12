@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name":"story book",
+        "title": "jdkjlkfajkasjnjlfknkaf",
+        "price": 0,
+        "category": "free",
+        "image": "bznner.jpg"
+    },
+    {
+        "id": 2,
+        "name":"story book",
+        "title": "kdkjlkfajkasjnjlfknkaf",
+        "price": 0,
+        "category": "free",
+        "image": "bznner.jpg"
+    },
+    {
+        "id": 3,
+        "name":"story book",
+        "title": "ldkjlkfajkasjnjlfknkaf",
+        "price": 200,
+        "category": "paid",
+        "image": "bznner.jpg"
+    },
+    {
+        "id": 4,
+        "name":"story book",
+        "title": "mdkjlkfajkasjnjlfknkaf",
+        "price": 0,
+        "category": "free",
+        "image": "bznner.jpg"
+    },
+    {
+        "id": 5,
+        "name":"story book",
+        "title": "ndkjlkfajkasjnjlfknkaf",
+        "price": 300,
+        "category": "paid",
+        "image": "bznner.jpg"
+    }
+]

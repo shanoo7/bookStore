@@ -1,7 +1,6 @@
-import Navbar from "./components/Navbar"
-import Banner from "./components/Banner"
-import Footer from "./components/Footer"
-
+import Home from "./Pages/Home"
+import {Route, Routes} from "react-router-dom"
+import Courses from "./Pages/Courses"
 
 function App() {
   //js
@@ -9,9 +8,14 @@ function App() {
   return (
     <>
       {/* jsx */}
-<Navbar/>
-<Banner/>
-<Footer/>
+<div className="dark:bg-slate-600 dark:text-white">
+  <Routes>
+<Route path="/" element={<Home/>}/>
+<Route path="/course" element={<Courses/>}/>
+
+</Routes>
+</div>
+
     </>
   )
 }
