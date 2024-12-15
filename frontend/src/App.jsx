@@ -1,5 +1,5 @@
 import Home from "./Pages/Home"
-import {Route, Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Courses from "./Pages/Courses"
 
 function App() {
@@ -8,13 +8,13 @@ function App() {
   return (
     <>
       {/* jsx */}
-<div className="dark:bg-slate-600 dark:text-white">
-  <Routes>
-<Route path="/" element={<Home/>}/>
-<Route path="/course" element={<Courses/>}/>
+      <div className="dark:bg-slate-600 dark:text-white">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course" element={<Courses />} />
 
-</Routes>
-</div>
+        </Routes>
+      </div>
 
     </>
   )

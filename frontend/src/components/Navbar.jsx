@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Login from '../Pages/Login';
 
 function Navbar() {
     //js
@@ -128,7 +129,8 @@ useEffect(() => {
                             </label>
                         </div>
                         <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300 cursor-pointer'>
-                            <a className="">Login</a>
+                            <a className="" onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
+                            <Login/>
                         </div>
                     </div>
                 </div>
