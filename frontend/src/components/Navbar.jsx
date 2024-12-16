@@ -128,8 +128,8 @@ useEffect(() => {
                                 </svg>
                             </label>
                         </div>
-                        <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300 cursor-pointer'>
-                            <a className="" onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
+                        <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300'>
+                            <a className="cursor-pointer" onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
                             <Login/>
                         </div>
                     </div>
