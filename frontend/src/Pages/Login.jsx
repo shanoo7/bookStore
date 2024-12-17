@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 
 function Login() {
-  const {register,handleSubmit}= useForm()
-  const onSubmit =(data)=> console.log(data)
+  const {register,handleSubmit,formState:{errors}}= useForm()
+  const onSubmit =(data)=> {
+    console.log(data)
+    document.getElementById('my_modal_3').close();
+  }
   return (
     <>
     <div>
@@ -14,7 +17,7 @@ function Login() {
   <div className="modal-box dark:bg-slate-600 dark:text-white">
     <form onSubmit={handleSubmit(onSubmit)} method="dialog ">
       {/* if there is a button in form, it will close the modal */}
-      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      <Link to={"/"}><button onClick={()=>document.getElementById('my_modal_3').close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></Link>
    
     <h3 className="font-bold text-lg ">Login</h3>
     {/* email */}
@@ -24,6 +27,8 @@ function Login() {
       <input type="email" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
       {...register("email",{required:true})}
        />
+       <br />
+       {errors.email&&<span className='text-red-500 text-sm'>This field is required</span>}
     </div>
     {/* password */}
     <div className='mt-3 space-y-2'>
@@ -32,6 +37,8 @@ function Login() {
       <input type="password" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your password'
       {...register("password",{required:true})}
       />
+       <br />
+       {errors.password&&<span className='text-red-500 text-sm'>This field is required</span>}
     </div>
     {/* button */}
     <div className='flex justify-between mt-3 mx-3'>
