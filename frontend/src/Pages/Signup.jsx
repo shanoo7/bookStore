@@ -2,10 +2,33 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Login from './Login'
 import {useForm} from 'react-hook-form'
+import axios from 'axios'
 
 function Signup() {
   const {register,handleSubmit,formState:{errors}}=useForm()
-  const onSubmit =(data)=>console.log(data)
+
+  // const onSubmit=(data)=>console.log(data)
+  const onSubmit = async (data)=>{
+    const sendData = {
+      username:data.username,
+      email:data.email,
+      password:data.password
+    }
+    await axios.post("http://localhost:4000/user/signup",sendData)
+    .then((res)=>{
+     console.log(res.data)
+     if(res.data){
+      alert("user created successfully from frontend")
+     }
+     localStorage.setItem("Users", JSON.stringify(res.data));
+    })
+    .catch((err)=>{
+      if(err.response){
+        alert(err.response.data.message)
+      }
+     
+    })
+  }
   return (
     <>
     <div className='h-screen flex justify-center items-center'>
@@ -23,7 +46,7 @@ function Signup() {
       <span>Name</span>
       <br />
       <input type="text" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
-      {...register("name",{required:true})}
+      {...register("username",{required:true})}
       />
        <br />
        {errors.name && <span className='text-red-500 text-sm'>This filed is required</span>}
