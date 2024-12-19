@@ -1,12 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-
+import axios from 'axios'
+import toast from 'react-hot-toast'
 function Login() {
   const {register,handleSubmit,formState:{errors}}= useForm()
-  const onSubmit =(data)=> {
-    console.log(data)
-    document.getElementById('my_modal_3').close();
+  // const onSubmit =(data)=> {
+  //   console.log(data)
+  //   document.getElementById('my_modal_3').close();
+  // }
+  const onSubmit = async(data)=>{
+    const sendData = {
+      email:data.email,
+      password:data.password
+    }
+   await axios.post("http://localhost:4000/user/login",sendData)
+   .then((res)=>{
+    console.log(res.data)
+  if(res.data){
+    
+    toast.success("user login successfully from frontend")
+    document.getElementById('my_modal_3').close()
+    setTimeout(()=>{
+      window.location.reload()
+    },1000)
+  }
+localStorage.setItem("Users",JSON.stringify(res.data.user))
+   })
+   .catch((err)=>{
+if(err.response){
+toast.error(err.response.data.message)
+}else{
+  toast.error("error occurred")
+}
+   })
+
   }
   return (
     <>

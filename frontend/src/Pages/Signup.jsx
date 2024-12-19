@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Login from './Login'
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 function Signup() {
   const {register,handleSubmit,formState:{errors}}=useForm()
+  const navigate = useNavigate()
 
   // const onSubmit=(data)=>console.log(data)
   const onSubmit = async (data)=>{
@@ -18,13 +20,17 @@ function Signup() {
     .then((res)=>{
      console.log(res.data)
      if(res.data){
-      alert("user created successfully from frontend")
+      toast.success("user created successfully from frontend")
      }
+     navigate("/")
+     window.location.reload()
      localStorage.setItem("Users", JSON.stringify(res.data));
     })
     .catch((err)=>{
       if(err.response){
-        alert(err.response.data.message)
+        toast.error(err.response.data.message)
+      }else{
+        toast.error("error occurred")
       }
      
     })
@@ -36,6 +42,8 @@ function Signup() {
 
 
   <div className="modal-box dark:bg-slate-600 dark:text-white">
+
+    {/* form */}
     <form onSubmit={handleSubmit(onSubmit)} method="dialog ">
       {/* if there is a button in form, it will close the modal */}
      <Link to={"/"}> <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></Link>
@@ -75,8 +83,9 @@ function Signup() {
     <div className='flex justify-between mt-3 mx-3'>
       <button className='bg-pink-500 text-white hover:bg-pink-700 duration-200 rounded py-1 px-3'>Signup</button>
       <p>have account?<span className='text-blue-500 hover:text-blue-700 duration-200 cursor-pointer' onClick={()=>document.getElementById('my_modal_3').showModal()}> login</span></p>
+      <Login/>
     </div>
-    <Login/>
+   
     </form>
   </div>
 

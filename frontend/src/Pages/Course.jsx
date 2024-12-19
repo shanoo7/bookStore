@@ -30,7 +30,7 @@ function Course() {
             <button className='mt-8 bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-700 duration-200 cursor:pointer'>back</button>
           </Link>
         </div>
-        <div className=' grid grid-cols-1 md:grid-cols-4'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
           {book.map((item) => (
             <div >
               {<Cards item={item} key={item.id} />}

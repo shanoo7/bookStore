@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Login from '../Pages/Login';
+import { useAuth } from '../context/authProvider';
+import Logout from '../Pages/Logout';
+// import { useAuth } from '../context/AuthProvider.jsx';
 
 function Navbar() {
     //js
@@ -17,13 +20,18 @@ function Navbar() {
     //     }
     // }, [theme]);
 
+ 
+    const [authUser, setAuthUser] = useAuth()
+    
+    console.log(authUser)
+    console.log("object")
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.body.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-}, [theme]);
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.body.classList.toggle("dark", theme === "dark");
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     const [sticky, setSticky] = useState(false)
     useEffect(() => {
@@ -128,10 +136,13 @@ useEffect(() => {
                                 </svg>
                             </label>
                         </div>
-                        <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300'>
-                            <a className="cursor-pointer" onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
-                            <Login/>
-                        </div>
+                       {
+                        authUser ?<Logout/> 
+                        :  <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300'>
+                        <a className="cursor-pointer" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
+                        <Login />
+                    </div>
+                       }
                     </div>
                 </div>
             </div>
