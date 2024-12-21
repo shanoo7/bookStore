@@ -58,7 +58,7 @@ function Navbar({setSearchTerm}) {
             <li><a href='/'>Home</a></li>
             <li><a href='/course'>Course</a></li>
             <li><a href='/contact'>Contact</a></li>
-            <li><a>About</a></li>
+            <li><a href='/about'>About</a></li>
         </>
 
     )
@@ -105,7 +105,7 @@ function Navbar({setSearchTerm}) {
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
                                     fill="currentColor"
-                                    className="h-4 w-4 opacity-70">
+                                    className="h-8 w-8 opacity-90">
                                    
                                      
                                     <path
@@ -146,8 +146,8 @@ function Navbar({setSearchTerm}) {
                         </div>
                        {
                         authUser ?<Logout/> 
-                        :  <div className='py-2 px-4 bg-red-400 rounded hover:bg-green-300'>
-                        <a className="cursor-pointer" onClick={() => document.getElementById('my_modal_3').showModal()}>Login</a>
+                        :  <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
+                        <a className="cursor-pointer" onClick={() => document.getElementById('my_modal_3').showModal()}><div className=' min-w-20 text-center'>Login</div></a>
                         <Login />
                     </div>
                        }

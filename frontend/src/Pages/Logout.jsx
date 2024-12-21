@@ -22,7 +22,7 @@ function Logout() {
   return (
     <>
     <div>
-      <button onClick={clickButton} className='bg-red-500 text-white rounded py-2 px-4'>Logout</button>
+      <button onClick={clickButton} className='bg-red-500 text-white rounded py-2  min-w-20 text-center'>Logout</button>
     </div>
     </>
   )

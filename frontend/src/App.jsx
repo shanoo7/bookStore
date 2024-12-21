@@ -6,6 +6,7 @@ import Contacts from "./Pages/Contacts"
 import {Toaster} from 'react-hot-toast'
 import { useAuth } from "./context/authProvider"
 import { useState } from "react"
+import Abouts from "./components/Abouts"
 function App() {
   const [authUser]=useAuth()
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,6 +20,7 @@ function App() {
           <Route path="/course" element={authUser?<Courses  />:<Navigate to={"/signup"}/>} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/signup" element={<Signup/>} />
+          <Route path="/about" element={<Abouts/>} />  
         </Routes>
         <Toaster/>
       </div>
