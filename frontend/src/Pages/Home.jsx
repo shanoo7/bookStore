@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from "../components/Navbar"
 import Banner from "../components/Banner"
 import Footer from "../components/Footer"
 import Freebook from "../components/Freebook"
 
 function Home() {
+    const [searchTerm, setSearchTerm] = useState("")
     return (
         <>
             <div>
-                <Navbar />
+                <Navbar setSearchTerm={setSearchTerm}/>
                 <Banner />
-                <Freebook />
+                <Freebook searchTerm={searchTerm} />
                 <Footer />
             </div>
         </>

@@ -6,8 +6,10 @@ export  function AuthProvider({ children }) {
   const [authUser, setAuthUser] = useState(
     initialAuthUser ? JSON.parse(initialAuthUser) : undefined
   );
+
+  const [searchTerm, setSearchTerm] = useState("");
   return (
-    <AuthContext.Provider value={[authUser, setAuthUser]}>
+    <AuthContext.Provider value={[authUser, setAuthUser,searchTerm,setSearchTerm]}>
       {children}
     </AuthContext.Provider>
   );

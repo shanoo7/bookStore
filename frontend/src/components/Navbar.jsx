@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Login from '../Pages/Login';
 import { useAuth } from '../context/authProvider';
 import Logout from '../Pages/Logout';
+import { Link } from 'react-router-dom';
 // import { useAuth } from '../context/AuthProvider.jsx';
 
-function Navbar() {
+function Navbar({setSearchTerm}) {
     //js
     // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
 
@@ -21,12 +22,16 @@ function Navbar() {
     // }, [theme]);
 
  
+    const [inputValue,setInputValue]=useState("");
     const [authUser, setAuthUser] = useAuth()
-    
     console.log(authUser)
     console.log("object")
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
+    const handleSearch= ()=>{
+        setSearchTerm(inputValue)
+        setInputValue("")
+    }
     useEffect(() => {
         document.documentElement.classList.toggle("dark", theme === "dark");
         document.body.classList.toggle("dark", theme === "dark");
@@ -85,7 +90,7 @@ function Navbar() {
 
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl">bookStore</a>
+                       <Link to="/"> <a className="btn btn-ghost text-xl">bookStore</a></Link>
                     </div>
                     <div className="navbar-end space-x-3 ">
                         <div className="navbar-center hidden lg:flex">
@@ -95,17 +100,20 @@ function Navbar() {
                         </div>
                         <div className='hidden md:block'>
                             <label className=" flex items-center gap-2">
-                                <input type="text" className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" />
-                                <svg
+                                <input type="text" value={inputValue} v className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" onChange={(e)=>setInputValue(e.target.value)} />
+                                <p   onClick={handleSearch}><svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
                                     fill="currentColor"
                                     className="h-4 w-4 opacity-70">
+                                   
+                                     
                                     <path
                                         fillRule="evenodd"
                                         d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                                         clipRule="evenodd" />
-                                </svg>
+                                        
+                                </svg></p>
                             </label>
                         </div>
                         <div>

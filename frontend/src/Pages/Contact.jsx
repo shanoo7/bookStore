@@ -1,9 +1,36 @@
+import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 function Contact() {
     const{register,handleSubmit,formState:{errors}}=useForm()
-    const onSubmit=(data)=>console.log(data)
+    const navigate = useNavigate()
+    // const onSubmit=(data)=>{
+    //   console.log(data)
+    //   toast.success( "Thank you for contacting us! We'll get back to you soon"
+    //   )
+    // }
+    const onSubmit = async(data)=>{
+      try {
+        const contactData = {
+          name:data.name,
+          email:data.email,
+          phone:data.phone,
+          message:data.message
+        }
+        await axios.post("http://localhost:4000/contact",contactData)
+        toast.success("Contact created successfully")
+        console.log(data)
+      setTimeout(()=>{
+        navigate("/")
+      },2000)
+      } catch (error) {
+        toast.error("Internal server error")
+        console.log("Internal server error" + error.message)
+      }
+    }
   return (
     <>
     <div className='flex items-center justify-center h-screen'>
@@ -27,6 +54,15 @@ function Contact() {
       />
       <br />
        {errors.email && <span className='text-red-500 dark:text-red-400 text-sm'>Email is required</span>}
+      </div>
+      <div className='mt-3 space-y-2'>
+      <span>phone</span>
+      <br />
+      <input type="text" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your number'
+      {...register("phone",{required:true})}
+      />
+      <br />
+      {errors.phone && <span className='text-red-500 dark:text-red-400 text-sm'>Name is required</span>}
       </div>
       <div className='mt-3 space-y-2'>
       <span>Message</span>

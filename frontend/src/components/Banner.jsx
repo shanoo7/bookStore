@@ -6,10 +6,9 @@ function Banner() {
             <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex md:flex-row flex-col'>
                 <div className="w-full md:w-1/2 md:mt-32 mt-12 order-2 md:order-1">
                     <div className='space-y-12'>
-                        <h1 className='text-4xl font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Natus non officia <span className='text-pink-500'>dolorem</span>
+                        <h1 className='text-4xl font-bold'>Welcome to  <span className='text-pink-500'>BookStore</span>
                         </h1>
-                        <p className='text-xl font-bold'>jhkjfhkAHFK</p>
+                        <p className='text-xl font-bold'>Discover, explore, and purchase your favorite books easily. We're building a modern platform for all your reading needs!</p>
                         <label className="input input-bordered flex items-center dark:bg-slate-600 dark:text-white gap-2">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +23,7 @@ function Banner() {
                             <input type="text" className="grow " placeholder="Email" />
                         </label>
                     </div>
-                    <button className="btn btn-secondary mt-6">Secondary</button>
+                    <button className="btn btn-secondary mt-6">Get Started</button>
                 </div>
                 <div className="w-full md:w-1/2 p-4 md:mt-32 mt-12  order-1">
                     <img className='w-90 h-90 ' src='banner.jpg' alt='banner'></img>

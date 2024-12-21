@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "name":"story book",
-        "title": "jdkjlkfajkasjnjlfknkaf",
+        "name":"Html",
+        "title": "for creating structure of web page",
         "price": 0,
         "category": "free",
-        "image": "bznner.jpg"
+        "image": "https://img.freepik.com/free-photo/programming-background-concept_23-2150170158.jpg?t=st=1734683513~exp=1734687113~hmac=e4bf445342c897ef9f80abe8ba398253752e2273b0d7a59ed11795fa19770e4c&w=826"
     },
     {
         "id": 2,
-        "name":"story book",
-        "title": "kdkjlkfajkasjnjlfknkaf",
+        "name":"Css",
+        "title": "for styling",
         "price": 0,
         "category": "free",
-        "image": "bznner.jpg"
+        "image": "https://img.freepik.com/free-photo/programming-background-collage_23-2149901769.jpg?t=st=1734683994~exp=1734687594~hmac=fe6e29ad6f8b2dfe51c3ba4e1d46d4084068ea5d5d45f60f6c84c83cf2f37d44&w=826"
     },
     {
         "id": 3,
@@ -25,11 +25,11 @@
     },
     {
         "id": 4,
-        "name":"story book",
-        "title": "mdkjlkfajkasjnjlfknkaf",
+        "name":"JavaScript",
+        "title": "for logic",
         "price": 0,
         "category": "free",
-        "image": "bznner.jpg"
+        "image": "https://img.freepik.com/free-vector/programmers-using-javascript-programming-language-computer-tiny-people-javascript-language-javascript-engine-js-web-development-concept-bright-vibrant-violet-isolated-illustration_335657-986.jpg?t=st=1734682959~exp=1734686559~hmac=633c5cc3b4455c83918d9f59c14d9fff331a59695e40487dcbc5d4fbf5c22106&w=996"
     },
     {
         "id": 5,
