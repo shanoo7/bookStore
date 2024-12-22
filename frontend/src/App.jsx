@@ -7,8 +7,9 @@ import {Toaster} from 'react-hot-toast'
 import { useAuth } from "./context/authProvider"
 import { useState } from "react"
 import Abouts from "./components/Abouts"
+import Login from "./Pages/Login"
 function App() {
-  const [authUser]=useAuth()
+  const {authUser}=useAuth()
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contacts />} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/about" element={<Abouts/>} />  
+          <Route path="/login" element={<Login/>} /> 
         </Routes>
         <Toaster/>
       </div>

@@ -21,23 +21,35 @@ function Navbar({setSearchTerm}) {
     //     }
     // }, [theme]);
 
- 
+    const navItems = (
+        <>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/course'>Course</a></li>
+            <li><a href='/contact'>Contact</a></li>
+            <li><a href='/about'>About</a></li>
+        </>
+
+    )
+
     const [inputValue,setInputValue]=useState("");
-    const [authUser, setAuthUser] = useAuth()
+    const {authUser} = useAuth()
     console.log(authUser)
     console.log("object")
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+   
 
     const handleSearch= ()=>{
         setSearchTerm(inputValue)
         setInputValue("")
     }
+    //Theme
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
     useEffect(() => {
         document.documentElement.classList.toggle("dark", theme === "dark");
         document.body.classList.toggle("dark", theme === "dark");
         localStorage.setItem("theme", theme);
     }, [theme]);
 
+    //Sticky
     const [sticky, setSticky] = useState(false)
     useEffect(() => {
         const handleScroll = () => {
@@ -52,16 +64,9 @@ function Navbar({setSearchTerm}) {
         return (() => {
             window.removeEventListener("scroll", handleScroll)
         })
-    }, [])
-    const navItems = (
-        <>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/course'>Course</a></li>
-            <li><a href='/contact'>Contact</a></li>
-            <li><a href='/about'>About</a></li>
-        </>
+    }, []);
 
-    )
+    
 
     return (
         <>
@@ -147,8 +152,8 @@ function Navbar({setSearchTerm}) {
                        {
                         authUser ?<Logout/> 
                         :  <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
-                        <a className="cursor-pointer" onClick={() => document.getElementById('my_modal_3').showModal()}><div className=' min-w-20 text-center'>Login</div></a>
-                        <Login />
+                       <Link to={"/login"}> <a className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></a></Link>
+                        
                     </div>
                        }
                     </div>

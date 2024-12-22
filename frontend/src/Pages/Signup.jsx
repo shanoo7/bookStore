@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Login from './Login'
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -23,7 +22,9 @@ function Signup() {
       toast.success("user created successfully from frontend")
      }
      navigate("/")
-     window.location.reload()
+     setTimeout(()=>{
+      window.location.reload()
+    },1000)
      localStorage.setItem("Users", JSON.stringify(res.data));
     })
     .catch((err)=>{
@@ -82,8 +83,7 @@ function Signup() {
     {/* button */}
     <div className='flex justify-between mt-3 mx-3'>
       <button className='bg-pink-500 text-white hover:bg-pink-700 duration-200 rounded py-1 px-3'>Signup</button>
-      <p>have account?<span className='text-blue-500 hover:text-blue-700 duration-200 cursor-pointer' onClick={()=>document.getElementById('my_modal_3').showModal()}> login</span></p>
-      <Login/>
+      <p>have account?<Link to={"/login"}><span className='text-blue-500 hover:text-blue-700 duration-200 cursor-pointer'> login</span></Link></p>
     </div>
    
     </form>

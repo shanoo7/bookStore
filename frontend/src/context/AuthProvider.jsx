@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 
+
 export const AuthContext = createContext();
 export  function AuthProvider({ children }) {
+  
   const initialAuthUser = localStorage.getItem("Users");
   const [authUser, setAuthUser] = useState(
     initialAuthUser ? JSON.parse(initialAuthUser) : undefined
@@ -9,7 +11,7 @@ export  function AuthProvider({ children }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   return (
-    <AuthContext.Provider value={[authUser, setAuthUser,searchTerm,setSearchTerm]}>
+    <AuthContext.Provider value={{authUser, setAuthUser,searchTerm,setSearchTerm}}>
       {children}
     </AuthContext.Provider>
   );

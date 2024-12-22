@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -9,6 +9,7 @@ function Login() {
   //   console.log(data)
   //   document.getElementById('my_modal_3').close();
   // }
+  const navigate = useNavigate();
   const onSubmit = async(data)=>{
     const sendData = {
       email:data.email,
@@ -20,7 +21,8 @@ function Login() {
   if(res.data){
     
     toast.success("user login successfully from frontend")
-    document.getElementById('my_modal_3').close()
+    // document.getElementById('my_modal_3').close()
+    navigate("/")
     setTimeout(()=>{
       window.location.reload()
     },1000)
@@ -38,14 +40,14 @@ toast.error(err.response.data.message)
   }
   return (
     <>
-    <div>
+    <div className='h-screen flex justify-center items-center'>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
-<dialog id="my_modal_3" className="modal ">
+
   <div className="modal-box dark:bg-slate-600 dark:text-white">
     <form onSubmit={handleSubmit(onSubmit)} method="dialog ">
       {/* if there is a button in form, it will close the modal */}
-      <Link to={"/"}><button onClick={()=>document.getElementById('my_modal_3').close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></Link>
+      <Link to={"/"}><button  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></Link>
    
     <h3 className="font-bold text-lg ">Login</h3>
     {/* email */}
@@ -75,7 +77,7 @@ toast.error(err.response.data.message)
     </div>
     </form>
   </div>
-</dialog>
+
     </div>
     </>
   )

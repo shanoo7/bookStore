@@ -32,8 +32,8 @@ function Course() {
         </div>
         <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
           {book.map((item) => (
-            <div >
-              {<Cards item={item} key={item.id} />}
+            <div key={item.id} >
+              {<Cards item={item} />}
             </div>
           ))}
         </div>
@@ -42,4 +42,4 @@ function Course() {
   )
 }
 
-export default Course
+export default Course;
