@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Login from '../Pages/Login';
-import { useAuth } from '../context/authProvider';
+import { useAuth } from '../context/AuthProvider';
 import Logout from '../Pages/Logout';
 import { Link } from 'react-router-dom';
 // import { useAuth } from '../context/AuthProvider.jsx';

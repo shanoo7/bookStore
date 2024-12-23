@@ -1,11 +1,10 @@
 import Home from "./Pages/Home"
 import { Navigate, Route, Routes } from "react-router-dom"
-// import Courses from "./Pages/Courses"
 import Courses from "./Pages/courses/Courses"
 import Signup from "./Pages/Signup"
 import Contacts from "./Pages/contacts/Contacts"
 import {Toaster} from 'react-hot-toast'
-import { useAuth } from "./context/authProvider"
+import { useAuth } from "./context/AuthProvider"
 import { useState } from "react"
 import Abouts from "./Pages/abouts/Abouts"
 import Login from "./Pages/Login"

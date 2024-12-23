@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import List from '../../public/list.json'
 import axios from 'axios'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,7 +12,7 @@ function Freebook({searchTerm}) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/book")
+        const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
         const data = res.data.filter((item) => item.category === "free")
         console.log(data)
         setBook(data)
@@ -25,12 +24,7 @@ function Freebook({searchTerm}) {
     }
     getData();
   }, [])
-  // useEffect(() => {
-  //   const result = book.filter((book) =>
-  //     book.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-  //   setFilterBook(result);
-  // }, [searchTerm, book]);
+
   useEffect(() => {
     const result = book.filter((book) =>
       book.name?.toLowerCase().includes(searchTerm?.toLowerCase() || "")
@@ -77,12 +71,13 @@ function Freebook({searchTerm}) {
   };
   return (
     <>
-      <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
+      <div className='max-w-screen-2xl mt-5 container mx-auto md:px-20 px-4'>
         <h1 className='font-bold text-xl pb-2'>free offered courses</h1>
+        <p>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
        {
         filterBook.length>=1? 
         <div>
-<p>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
+
 
         <Slider {...settings}>
           {filterBook.map((item) => (
