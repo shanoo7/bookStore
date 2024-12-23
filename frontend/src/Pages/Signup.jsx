@@ -22,10 +22,10 @@ function Signup() {
       toast.success("user created successfully from frontend")
      }
      navigate("/")
-     setTimeout(()=>{
-      window.location.reload()
-    },1000)
-     localStorage.setItem("Users", JSON.stringify(res.data));
+    //  setTimeout(()=>{
+    //   window.location.reload()
+    // },2000)
+    //  localStorage.setItem("Users", JSON.stringify(res.data));
     })
     .catch((err)=>{
       if(err.response){
