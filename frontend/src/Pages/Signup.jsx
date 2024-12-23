@@ -16,7 +16,7 @@ function Signup() {
         email: data.email,
         password: data.password
       }
-      const res = await axios.post("http://localhost:4000/user/signup", sendData)
+      const res = await axios.post("https://bookstore-3-9rto.onrender.com/user/signup", sendData)
       console.log(res.data)
       if (res.data) {
         toast.success("user created successfully")
