@@ -1,13 +1,15 @@
 import Home from "./Pages/Home"
 import { Navigate, Route, Routes } from "react-router-dom"
-import Courses from "./Pages/Courses"
+// import Courses from "./Pages/Courses"
+import Courses from "./Pages/courses/Courses"
 import Signup from "./Pages/Signup"
-import Contacts from "./Pages/Contacts"
+import Contacts from "./Pages/contacts/Contacts"
 import {Toaster} from 'react-hot-toast'
 import { useAuth } from "./context/authProvider"
 import { useState } from "react"
-import Abouts from "./components/Abouts"
+import Abouts from "./Pages/abouts/Abouts"
 import Login from "./Pages/Login"
+
 function App() {
   const {authUser}=useAuth()
   const [searchTerm, setSearchTerm] = useState("");

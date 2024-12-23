@@ -34,9 +34,7 @@ function Navbar({setSearchTerm}) {
     const [inputValue,setInputValue]=useState("");
     const {authUser} = useAuth()
     console.log(authUser)
-    console.log("object")
    
-
     const handleSearch= ()=>{
         setSearchTerm(inputValue)
         setInputValue("")
