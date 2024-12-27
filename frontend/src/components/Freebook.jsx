@@ -5,9 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
 
+
 function Freebook({searchTerm}) {
   const [book, setBook] = useState([])
   const [filterBook,setFilterBook]=useState([])
+  
 
   useEffect(() => {
     const getData = async () => {
@@ -81,7 +83,10 @@ function Freebook({searchTerm}) {
 
         <Slider {...settings}>
           {filterBook.map((item) => (
-            <Cards item={item} key={item.id} />
+            <div key={item.id}>
+                <Cards item={item}  />
+            </div>
+          
           ))}
         </Slider>
         </div>

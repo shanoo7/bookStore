@@ -8,6 +8,7 @@ import { useAuth } from "./context/AuthProvider"
 import { useState } from "react"
 import Abouts from "./Pages/abouts/Abouts"
 import Login from "./Pages/Login"
+import BookDetails from "./Pages/BookDetails"
 
 function App() {
   const {authUser}=useAuth()
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           <Route path="/about" element={<Abouts/>} />  
           <Route path="/login" element={<Login/>} /> 
+          <Route path="/book/:_id" element={<BookDetails/>} /> 
         </Routes>
         <Toaster/>
       </div>
