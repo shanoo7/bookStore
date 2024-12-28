@@ -21,8 +21,8 @@ export function AuthProvider({ children }) {
   }
 
   //buy now function
-const handleBuy = ()=>{
-  toast.success(`Buying process started for ${selectedBook.name}`)
+const handleBuy = (item)=>{
+  toast.success(`Buying process started for ${item.name}`)
 }
   return (
     <AuthContext.Provider value={{ authUser, setAuthUser, selectedBook, setSelectedBook, handleSelectedBook,handleBuy }}>

@@ -24,7 +24,7 @@ function Cards({ item }) {
             <p className='text-sm'>{item.title}</p>
             <div className="card-actions justify-between">
               <div className="badge py-4 px-4">${item.price}</div>
-              <div onClick={()=>handleBuy()} className="badge badge-outline bg-pink-500 text-white py-4 px-2 cursor-pointer hover:bg-pink-700 duration:200">Buy Now</div>
+              <div onClick={()=>handleBuy(item)} className="badge badge-outline bg-pink-500 text-white py-4 px-2 cursor-pointer hover:bg-pink-700 duration:200">Buy Now</div>
             </div>
           </div>
         </div>
