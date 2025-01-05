@@ -8,7 +8,7 @@ function Banner() {
                     <div className='space-y-12'>
                         <h1 className='text-4xl font-bold'>Welcome to  <span className='text-pink-500'>BookStore</span>
                         </h1>
-                        <p className='text-xl text-justify font-bold'>Discover, explore, and purchase your favorite books easily. We're building a modern platform for all your reading needs!</p>
+                        <p className='text-xl font-bold'>Discover, explore, and purchase your favorite books easily. We're building a modern platform for all your reading needs!</p>
                         <label className="input input-bordered flex items-center dark:bg-slate-600 dark:text-white gap-2">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

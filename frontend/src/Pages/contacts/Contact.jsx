@@ -40,7 +40,7 @@ function Contact() {
         <div className='mt-3 space-y-2'>
       <span>Name</span>
       <br />
-      <input type="text" className='py-1 px-10 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
+      <input type="text" className='py-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
       {...register("name",{required:true})}
       />
       <br />
@@ -49,7 +49,7 @@ function Contact() {
       <div className='mt-3 space-y-2'>
       <span>Email</span>
       <br />
-      <input type="email" className='py-1 px-10 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
+      <input type="email" className='py-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
        {...register("email",{required:true})}
       />
       <br />
@@ -58,7 +58,7 @@ function Contact() {
       <div className='mt-3 space-y-2'>
       <span>phone</span>
       <br />
-      <input type="text" className='py-1 px-10 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your number'
+      <input type="text" className='py-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your number'
       {...register("phone",{required:true})}
       />
       <br />
@@ -67,13 +67,13 @@ function Contact() {
       <div className='mt-3 space-y-2'>
       <span>Message</span>
       <br />
-      <textarea className='py-1 px-14 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
+      <textarea className='py-1 px-5 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
        {...register("message",{required:true})}
       />
       <br />
        {errors.message && <span className='text-red-500 dark:text-red-400 text-sm'>Message is required</span>}
       </div>
-      <button className='mt-3 py-2 min-w-full space-y-2 text-md bg-pink-500 text-white rounded hover:bg-pink-700 duration-200'>submit</button>
+      <button className='mt-3 w-full py-1 space-y-2 text-md bg-pink-500 text-white rounded hover:bg-pink-700 duration-200'>submit</button>
       </div>
      </form>
     </div>
