@@ -35,7 +35,7 @@ function Contact() {
     <>
     <div className='flex items-center justify-center h-screen'>
      <form onSubmit={handleSubmit(onSubmit)}>
-     <div className="card items-center bg-base-100 w-96 shadow-xl p-3 dark:bg-slate-600 dark:text-white">
+     <div className="card items-center bg-base-100 shadow-xl p-3 dark:bg-slate-600 dark:text-white">
         <h1 className='text-2xl'>Contact Us</h1>
         <div className='mt-3 space-y-2'>
       <span>Name</span>
@@ -73,7 +73,7 @@ function Contact() {
       <br />
        {errors.message && <span className='text-red-500 dark:text-red-400 text-sm'>Message is required</span>}
       </div>
-      <button className='mt-3 min-w-80 space-y-2 text-md bg-pink-500 text-white rounded hover:bg-pink-700 duration-200'>submit</button>
+      <button className='mt-3 py-2 min-w-full space-y-2 text-md bg-pink-500 text-white rounded hover:bg-pink-700 duration-200'>submit</button>
       </div>
      </form>
     </div>

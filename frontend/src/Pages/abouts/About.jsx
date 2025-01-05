@@ -2,9 +2,9 @@ import React from 'react';
 
 function About() {
   return (
-    <div className="max-w-screen  h-screen container mx-auto px-4 md:px-20 py-10 mt-10">
+    <div className="max-w-screen container mx-auto px-4 md:px-20 py-10 mt-10">
       <h1 className="text-4xl font-bold text-center mb-6">About Us</h1>
-      <p className="text-lg leading-relaxed">
+      <p className="text-lg text-justify leading-relaxed">
         Welcome to <span className="font-semibold text-blue-600">BookStore</span>, your one-stop destination for discovering a world of books. Our mission is to make reading accessible to everyone by offering a wide range of books, including free and premium collections, at your fingertips. Whether you're a casual reader, a student, or an avid book lover, we aim to provide a seamless and enriching experience for all.
       </p>
       <p className="mt-6 text-lg leading-relaxed">

@@ -75,7 +75,7 @@ function Freebook({searchTerm}) {
     <>
       <div className='max-w-screen-2xl mt-5 container mx-auto md:px-20 px-4'>
         <h1 className='font-bold text-xl pb-2'>free offered courses</h1>
-        <p>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
+        <p className='text-justify'>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
        {
         filterBook.length>=1? 
         <div>
