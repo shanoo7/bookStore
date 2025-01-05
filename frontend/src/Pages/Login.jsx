@@ -53,7 +53,7 @@ function Login() {
             <div className='mt-3 space-y-2'>
               <span>Email</span>
               <br />
-              <input type="email" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
+              <input type="email" className='p-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
                 {...register("email", { required: true })}
               />
               <br />
@@ -63,14 +63,14 @@ function Login() {
             <div className='mt-3 space-y-2'>
               <span>Password</span>
               <br />
-              <input type="password" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your password'
+              <input type="password" className='p-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your password'
                 {...register("password", { required: true })}
               />
               <br />
               {errors.password && <span className='text-red-500 text-sm'>This field is required</span>}
             </div>
             {/* button */}
-            <div className='flex justify-between mt-3 mx-3'>
+            <div className='flex justify-between mt-3 text-xs'>
               <button className='bg-pink-500 text-white hover:bg-pink-700 duration-200 rounded py-1 px-3'>Login</button>
               <p>not registered?<Link to={"/signup"}><span className='text-blue-500 hover:text-blue-700 duration-200 cursor-pointer'> signup</span></Link></p>
             </div>

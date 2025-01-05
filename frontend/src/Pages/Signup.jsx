@@ -37,7 +37,7 @@ function Signup() {
   };
   return (
     <>
-      <div className='h-screen flex justify-center items-center'>
+      <div className='h-screen  flex justify-center items-center'>
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
 
@@ -53,7 +53,7 @@ function Signup() {
             <div className='mt-3 space-y-2'>
               <span>Name</span>
               <br />
-              <input type="text" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
+              <input type="text" className='p-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your name'
                 {...register("username", { required: true })}
               />
               <br />
@@ -63,7 +63,7 @@ function Signup() {
             <div className='mt-3 space-y-2'>
               <span>Email</span>
               <br />
-              <input type="email" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
+              <input type="email" className='p-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your email'
                 {...register("email", { required: true })}
               />
               <br />
@@ -73,14 +73,14 @@ function Signup() {
             <div className='mt-3 space-y-2'>
               <span>Password</span>
               <br />
-              <input type="password" className='py-1 px-3 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your password'
+              <input type="password" className='p-1 rounded border outline-none dark:bg-slate-600 dark:text-white ' placeholder='Enter your password'
                 {...register("password", { required: true })}
               />
               <br />
               {errors.password && <span className='text-red-500 text-sm'>This filed is required</span>}
             </div>
             {/* button */}
-            <div className='flex justify-between mt-3 mx-3'>
+            <div className='flex justify-between mt-3 text-xs'>
               <button className='bg-pink-500 text-white hover:bg-pink-700 duration-200 rounded py-1 px-3'>Signup</button>
               <p>have account?<Link to={"/login"}><span className='text-blue-500 hover:text-blue-700 duration-200 cursor-pointer'> login</span></Link></p>
             </div>
