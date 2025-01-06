@@ -17,13 +17,13 @@ const{selectedBook,handleBuy}=useAuth();
   }
 
   return (
-    <div className="max-w-screen-2xl h-3x-screen pb-10  pt-5 container mx-auto md:px-20 px-4">
+    <div className="max-w-screen-2xl h-screen pb-10  pt-5 container mx-auto md:px-20 px-4">
       <h1 className="text-3xl font-bold mb-4">{selectedBook.name}</h1>
       <p className="text-lg mb-6">{selectedBook.title}</p>
       <img
         src={selectedBook.image}
         alt={selectedBook.name}
-        className="w-1/2 h-auto rounded object-cover mb-6"
+        className="w-[300px] rounded object-cover mb-6"
       />
          <p className="text-lg text-justify mb-6">{selectedBook.description}</p>
         <button div onClick={()=>handleBuy(selectedBook)} className=" mr-5 bg-green-500 text-white px-3 py-1 rounded hover:bg-green-700 duration-200 cursor:pointer">Buy Now</button>

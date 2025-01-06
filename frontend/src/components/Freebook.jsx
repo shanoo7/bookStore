@@ -15,7 +15,7 @@ function Freebook({searchTerm}) {
     const getData = async () => {
       try {
         const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
-        const data = res.data.filter((item) => item.category === "free")
+        const data = res.data.filter((item) => item.category ==="free")
         console.log(data)
         setBook(data)
         setFilterBook(data)
@@ -79,19 +79,16 @@ function Freebook({searchTerm}) {
        {
         filterBook.length>=1? 
         <div>
-
-
         <Slider {...settings}>
           {filterBook.map((item) => (
             <div key={item.id}>
                 <Cards item={item}  />
             </div>
-          
           ))}
         </Slider>
         </div>
         :
-        <h1 className='text-6xl text-center my-4 text-red-500'>No result found </h1>
+        <h1 className='text-4xl text-center my-10 text-red-500'>Fetching books, please wait...</h1>
        }
       </div>
 

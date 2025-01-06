@@ -11,7 +11,7 @@ function Cards({ item }) {
         <div className="card w-92 shadow-xl hover:scale-105 duration-200">
           <figure>
             <img
-              className="w-100 min-h-80 overflow-hidden rounded-lg cursor-pointer"
+              className="w-[200px] h-[200px] overflow-hidden rounded-lg cursor-pointer"
               src={item.image}
               onClick={()=>handleSelectedBook(item)}
               alt="not available" />
@@ -21,7 +21,7 @@ function Cards({ item }) {
               {item.name}
               <div className="badge badge-secondary">{item.category}</div>
             </h2>
-            <p className='text-sm'>{item.title}</p>
+            <p className='text-xs'>{item.title}</p>
             <div className="card-actions justify-between">
               <div className="badge py-4 px-4">${item.price}</div>
               <div onClick={()=>handleBuy(item)} className="badge badge-outline bg-pink-500 text-white py-4 px-2 cursor-pointer hover:bg-pink-700 duration:200">Buy Now</div>
