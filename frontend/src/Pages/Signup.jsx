@@ -11,21 +11,15 @@ function Signup() {
   // const onSubmit=(data)=>console.log(data)
   const onSubmit = async (data) => {
     try {
-      const sendData = {
-        username: data.username,
-        email: data.email,
-        password: data.password
-      }
+      const { username, email, password } = data;
+      const sendData = { username, email, password }
       const res = await axios.post("https://bookstore-3-9rto.onrender.com/user/signup", sendData)
       console.log(res.data)
       if (res.data) {
         toast.success("user created successfully")
       }
       navigate("/")
-      //  setTimeout(()=>{
-      //   window.location.reload()
-      // },2000)
-      //  localStorage.setItem("Users", JSON.stringify(res.data));
+
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message)
@@ -38,9 +32,6 @@ function Signup() {
   return (
     <>
       <div className='h-screen  flex justify-center items-center'>
-        {/* You can open the modal using document.getElementById('ID').showModal() method */}
-
-
         <div className="modal-box dark:bg-slate-600 dark:text-white">
 
           {/* form */}

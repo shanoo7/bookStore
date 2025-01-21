@@ -12,11 +12,11 @@ function Course() {
       try {
         setLoading(true)
         const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
-        console.log(res.data)
+        // console.log(res.data)
         setLoading(false)
         setBook(res.data)
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
     getBook();

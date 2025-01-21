@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   // const onSubmit =(data)=> {
   //   console.log(data)
-  //   document.getElementById('my_modal_3').close();
   // }
   const navigate = useNavigate();
   const onSubmit = async (data) => {

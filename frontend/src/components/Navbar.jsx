@@ -5,21 +5,7 @@ import { Link } from 'react-router-dom';
 // import { useAuth } from '../context/AuthProvider.jsx';
 
 function Navbar({setSearchTerm}) {
-    //js
-    // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
-
-    // useEffect(() => {
-    //     if (theme === "dark") {
-    //         document.documentElement.classList.add("dark")
-    //         localStorage.setItem("theme", "dark")
-    //         document.body.classList.add("dark")
-    //     } else {
-    //         document.documentElement.classList.remove("dark")
-    //         localStorage.setItem("theme", "light")
-    //         document.body.classList.remove("dark")
-    //     }
-    // }, [theme]);
-
+    
     const navItems = (
         <>
             <li><a href='/'>Home</a></li>
@@ -32,7 +18,7 @@ function Navbar({setSearchTerm}) {
 
     const [inputValue,setInputValue]=useState("");
     const {authUser} = useAuth()
-    console.log(authUser)
+    // console.log(authUser)
    
     const handleSearch= ()=>{
         setSearchTerm(inputValue)

@@ -16,12 +16,12 @@ function Freebook({searchTerm}) {
       try {
         const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
         const data = res.data.filter((item) => item.category ==="free")
-        console.log(data)
+        // console.log(data)
         setBook(data)
         setFilterBook(data)
 
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
     getData();
