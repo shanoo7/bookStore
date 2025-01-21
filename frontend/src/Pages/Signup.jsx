@@ -32,7 +32,7 @@ function Signup() {
   return (
     <>
       <div className='h-screen  flex justify-center items-center'>
-        <div className="modal-box dark:bg-slate-600 dark:text-white">
+        <div className="modal-box dark:bg-slate-600 dark:text-white w-full max-w-sm overflow-auto">
 
           {/* form */}
           <form onSubmit={handleSubmit(onSubmit)} method="dialog ">

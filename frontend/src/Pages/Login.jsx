@@ -43,7 +43,7 @@ function Login() {
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
 
-        <div className="modal-box dark:bg-slate-600 dark:text-white">
+        <div className="modal-box dark:bg-slate-600 dark:text-white w-full max-w-sm overflow-auto">
           <form onSubmit={handleSubmit(onSubmit)} method="dialog ">
             {/* if there is a button in form, it will close the modal */}
             <Link to={"/"}><button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></Link>
