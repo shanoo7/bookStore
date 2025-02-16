@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 function Signup() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,7 +15,7 @@ function Signup() {
       const { username, email, password } = data;
       const sendData = { username, email, password }
       const res = await axios.post("https://bookstore-3-9rto.onrender.com/user/signup", sendData)
-      console.log(res.data)
+      // console.log(res.data)
       if (res.data) {
         toast.success("user created successfully")
       }
@@ -31,6 +32,10 @@ function Signup() {
   };
   return (
     <>
+    <Helmet>
+                <title>Signup component</title>
+                <meta name='description' content='this is the Signup page'></meta>
+              </Helmet>
       <div className='h-screen  flex justify-center items-center'>
         <div className="modal-box dark:bg-slate-600 dark:text-white w-full max-w-sm overflow-auto">
 

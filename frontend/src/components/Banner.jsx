@@ -1,8 +1,16 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
+
+
 
 function Banner() {
     return (
         <>
+            <Helmet>
+                <title>Banner component</title>
+                <meta name='description' content='this is the Banner page'></meta>
+            </Helmet>
+
             <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex md:flex-row flex-col'>
                 <div className="w-full md:w-1/2 md:mt-32 mt-12 order-2 md:order-1">
                     <div className='space-y-12'>
@@ -26,11 +34,18 @@ function Banner() {
                     <button className="btn btn-secondary mt-6">Get Started</button>
                 </div>
                 <div className="w-full md:w-1/2 p-4 md:mt-32 mt-12  order-1">
-                    <img loading="lazy" className='w-full md:w-96 h-auto ' src='banner.webp' alt='Bookstore banner showcasing'></img>
+                    <img
+                        loading="lazy"
+                        className='w-full md:w-96 h-auto'
+                        src='banner.webp'
+                        alt='Bookstore showcasing latest books'
+                        width={384}
+                        height={256}
+                    />
                 </div>
             </div>
         </>
     )
 }
 
-export default Banner
+export default Banner;

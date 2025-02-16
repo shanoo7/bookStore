@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { Helmet } from 'react-helmet-async'
 
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -39,6 +40,10 @@ function Login() {
 
   return (
     <>
+    <Helmet>
+                <title>Login component</title>
+                <meta name='description' content='this is the Login page'></meta>
+              </Helmet>
       <div className='h-screen flex justify-center items-center'>
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
 

@@ -4,8 +4,8 @@ import Logout from '../Pages/Logout';
 import { Link } from 'react-router-dom';
 // import { useAuth } from '../context/AuthProvider.jsx';
 
-function Navbar({setSearchTerm}) {
-    
+function Navbar({ setSearchTerm }) {
+
     const navItems = (
         <>
             <li><Link to='/'>Home</Link></li>
@@ -16,11 +16,11 @@ function Navbar({setSearchTerm}) {
 
     )
 
-    const [inputValue,setInputValue]=useState("");
-    const {authUser} = useAuth()
+    const [inputValue, setInputValue] = useState("");
+    const { authUser } = useAuth()
     // console.log(authUser)
-   
-    const handleSearch= ()=>{
+
+    const handleSearch = () => {
         setSearchTerm(inputValue)
         setInputValue("")
     }
@@ -49,7 +49,7 @@ function Navbar({setSearchTerm}) {
         })
     }, []);
 
-    
+
 
     return (
         <>
@@ -78,7 +78,7 @@ function Navbar({setSearchTerm}) {
 
                             </ul>
                         </div>
-                       <Link to="/"> <a className="btn btn-ghost text-xl">bookStore</a></Link>
+                        <Link to="/"> <a className="btn btn-ghost text-xl">bookStore</a></Link>
                     </div>
                     <div className="navbar-end space-x-3 ">
                         <div className="navbar-center hidden lg:flex">
@@ -88,20 +88,20 @@ function Navbar({setSearchTerm}) {
                         </div>
                         <div className='hidden md:block'>
                             <label className=" flex items-center gap-2">
-                                <input type="text" value={inputValue} v className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" onChange={(e)=>setInputValue(e.target.value)} />
-                                <p   onClick={handleSearch}><svg
+                                <input type="text" value={inputValue} v className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" onChange={(e) => setInputValue(e.target.value)} />
+                                <button onClick={handleSearch} aria-label="Search books"><svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
                                     fill="currentColor"
                                     className="h-8 w-8 opacity-90">
-                                   
-                                     
+
+
                                     <path
                                         fillRule="evenodd"
                                         d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                                         clipRule="evenodd" />
-                                        
-                                </svg></p>
+
+                                </svg></button>
                             </label>
                         </div>
                         <div>
@@ -132,13 +132,13 @@ function Navbar({setSearchTerm}) {
                                 </svg>
                             </label>
                         </div>
-                       {
-                        authUser ?<Logout/> 
-                        :  <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
-                       <Link to={"/login"} className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></Link>
-                        
-                    </div>
-                       }
+                        {
+                            authUser ? <Logout />
+                                : <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
+                                    <Link to={"/login"} className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></Link>
+
+                                </div>
+                        }
                     </div>
                 </div>
             </div>

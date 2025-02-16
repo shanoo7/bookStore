@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import Cards from '../../components/Cards'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 function Course() {
   const [book, setBook] = useState([])
 
@@ -20,6 +21,10 @@ function Course() {
   // console.log(list)
   return (
     <>
+   <Helmet>
+  <title>Browse All Courses</title>
+  <meta name="description" content="Explore our comprehensive collection of programming, design, and development courses." />
+</Helmet>
       <div className='max-w-screen-2xl container  mx-auto md:px-20 px-4'>
         <div className='pt-20 item-center justify-center text-center'>
           <h1 className='text-2xl md:text-4xl'>We are delighted to welcome you to our

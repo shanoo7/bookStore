@@ -4,12 +4,17 @@ import Banner from "../components/Banner"
 import Footer from "../components/Footer"
 import { Suspense } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import { Helmet } from 'react-helmet-async'
 const Freebook = React.lazy(() => import("../components/Freebook"))
 
 function Home() {
     const [searchTerm, setSearchTerm] = useState("")
     return (
         <>
+        <Helmet>
+                <title>Home component</title>
+                <meta name='description' content='this is the Banner page'></meta>
+              </Helmet>
             <div>
                 <Navbar setSearchTerm={setSearchTerm} />
                 <Banner />

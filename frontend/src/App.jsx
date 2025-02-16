@@ -9,6 +9,7 @@ import { useState } from "react"
 import Abouts from "./Pages/abouts/Abouts"
 import Login from "./Pages/Login"
 import BookDetails from "./Pages/BookDetails"
+import {HelmetProvider} from 'react-helmet-async'
 
 function App() {
   const {authUser}=useAuth()
@@ -16,6 +17,9 @@ function App() {
 
   return (
     <>
+    <HelmetProvider>
+
+   
       {/* jsx */}
       <div className="dark:bg-slate-600 dark:text-white">
         <Routes>
@@ -29,6 +33,7 @@ function App() {
         </Routes>
         <Toaster/>
       </div>
+      </HelmetProvider>
 
     </>
   )
