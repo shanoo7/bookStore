@@ -8,10 +8,10 @@ function Navbar({setSearchTerm}) {
     
     const navItems = (
         <>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/course'>Course</a></li>
-            <li><a href='/contact'>Contact</a></li>
-            <li><a href='/about'>About</a></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/course'>Course</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+            <li><Link to='/about'>About</Link></li>
         </>
 
     )
@@ -135,7 +135,7 @@ function Navbar({setSearchTerm}) {
                        {
                         authUser ?<Logout/> 
                         :  <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
-                       <Link to={"/login"}> <a className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></a></Link>
+                       <Link to={"/login"} className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></Link>
                         
                     </div>
                        }
@@ -146,4 +146,4 @@ function Navbar({setSearchTerm}) {
     )
 }
 
-export default Navbar
+export default Navbar;

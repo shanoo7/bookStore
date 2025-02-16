@@ -77,18 +77,18 @@ function Freebook({searchTerm}) {
         <h1 className='font-bold text-xl pb-2'>free offered courses</h1>
         <p className='text-justify'>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
        {
-        filterBook.length>=1? 
+        // filterBook.length>=1? 
         <div>
         <Slider {...settings}>
           {filterBook.map((item) => (
-            <div key={item.id}>
+            <div key={item._id}>
                 <Cards item={item}  />
             </div>
           ))}
         </Slider>
         </div>
-        :
-        <h1 className='text-4xl text-center my-10 text-red-500'>Fetching books, please wait...</h1>
+        // :
+        // <h1 className='text-4xl text-center my-10 text-red-500'>Fetching books, please wait...</h1>
        }
       </div>
 
