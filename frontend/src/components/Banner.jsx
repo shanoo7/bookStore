@@ -33,15 +33,8 @@ function Banner() {
                     </div>
                     <button className="btn btn-secondary mt-6">Get Started</button>
                 </div>
-                <div className="w-full md:w-1/2 p-4 md:mt-32 mt-12  order-1">
-                    <img
-                        loading="lazy"
-                        className='w-full md:w-96 h-auto'
-                        src='banner.webp'
-                        alt='Bookstore showcasing latest books'
-                        width={384}
-                        height={256}
-                    />
+                  <div className="w-full md:w-1/2 p-4 md:mt-32 mt-32  order-1">
+                    <img loading="lazy" className='w-full md:w-96 h-auto ' src='banner.webp' alt='Bookstore banner showcasing'></img>
                 </div>
             </div>
         </>

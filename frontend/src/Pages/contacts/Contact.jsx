@@ -14,7 +14,7 @@ function Contact() {
       const { name, email, phone, message } = data;
       const contactData = { name, email, phone, message };
 
-      await axios.post("http://localhost:4000/contact", contactData);
+      await axios.post("https://bookstore-3-9rto.onrender.com/contact", contactData);
       toast.success("Contact created successfully");
 
       setTimeout(() => {

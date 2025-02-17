@@ -96,4 +96,4 @@ function Freebook({searchTerm}) {
   )
 }
 
-export default Freebook
+export default Freebook;

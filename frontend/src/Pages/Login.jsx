@@ -28,7 +28,7 @@ function Login() {
         }, 1000)
       }
 
-      localStorage.setItem("Users", JSON.stringify(res.data.user))
+      localStorage.setItem("Users", JSON.stringify(res.data.user.token))
     } catch (err) {
       if (err.response) {
         toast.error(err.response.data.message)

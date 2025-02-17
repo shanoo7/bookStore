@@ -32,10 +32,10 @@ function Signup() {
   };
   return (
     <>
-    <Helmet>
-                <title>Signup component</title>
-                <meta name='description' content='this is the Signup page'></meta>
-              </Helmet>
+      <Helmet>
+        <title>Signup component</title>
+        <meta name='description' content='this is the Signup page'></meta>
+      </Helmet>
       <div className='h-screen  flex justify-center items-center'>
         <div className="modal-box dark:bg-slate-600 dark:text-white w-full max-w-sm overflow-auto">
 
