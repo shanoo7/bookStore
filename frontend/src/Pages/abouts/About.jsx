@@ -8,7 +8,7 @@ function About() {
             <title>About component</title>
             <meta name='description' content='this is the About page'></meta>
           </Helmet>
-    <div className="max-w-screen-4xl container mx-auto px-4 md:px-20 py-10 mt-10 h-screen">
+    <div className="max-w-screen-4xl container mx-auto px-4 md:px-20 py-10 mt-10">
     <h1 className="text-4xl font-bold text-center mb-6">About Us</h1>
     <p className="text-lg text-justify leading-relaxed">
       Welcome to <span className="font-semibold text-blue-600">BookStore</span>, your one-stop destination for discovering a world of books. Our mission is to make reading accessible to everyone by offering a wide range of books, including free and premium collections, at your fingertips. Whether you're a casual reader, a student, or an avid book lover, we aim to provide a seamless and enriching experience for all.
