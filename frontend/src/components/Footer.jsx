@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 function Footer() {
     return (
         <>
-            <div>
                 <hr/>
-                <footer className="footer footer-center  dark:bg-slate-600 dark:text-white text-base-content rounded p-10">
+                <footer className="max-w-screen-4xl container mx-auto footer footer-center  dark:bg-slate-600 dark:text-white text-base-content rounded p-10">
                     <nav className="grid grid-flow-col gap-4">
                         <Link to='/about' className="link link-hover">About us</Link>
                         <Link to='contact' className="link link-hover">Contact</Link>
@@ -54,7 +53,6 @@ function Footer() {
                         <p>Copyright © {new Date().getFullYear()} - Thanks</p>
                     </aside>
                 </footer>
-            </div>
         </>
     )
 }

@@ -11,7 +11,7 @@ function Banner() {
                 <meta name='description' content='this is the Banner page'></meta>
             </Helmet>
 
-            <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex md:flex-row flex-col'>
+            <div className='max-w-screen-4xl container mx-auto md:px-20 px-4 flex md:flex-row flex-col'>
                 <div className="w-full md:w-1/2 md:mt-32 mt-12 order-2 md:order-1">
                     <div className='space-y-12'>
                         <h1 className='text-4xl font-bold'>Welcome to  <span className='text-pink-500'>BookStore</span>
@@ -34,7 +34,7 @@ function Banner() {
                     <button className="btn btn-secondary mt-6">Get Started</button>
                 </div>
                   <div className="w-full md:w-1/2 p-4 md:mt-32 mt-32  order-1">
-                    <img loading="lazy" className='w-full md:w-96 h-auto ' src='banner.webp' alt='Bookstore banner showcasing'></img>
+                    <img className='w-full md:w-96 h-auto m-auto' src='banner.webp' alt='Bookstore banner showcasing'></img>
                 </div>
             </div>
         </>

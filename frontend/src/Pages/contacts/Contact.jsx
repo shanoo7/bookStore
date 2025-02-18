@@ -31,7 +31,7 @@ function Contact() {
             <title>Contact component</title>
             <meta name='description' content='this is the Contact page'></meta>
           </Helmet>
-      <div className="flex items-center justify-center h-screen px-4">
+      <div className="max-w-screen-4xl container mx-auto flex items-center justify-center min-h-screen px-4">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           <div className="items-center bg-base-100 shadow-xl p-6 dark:bg-slate-600 dark:text-white rounded-lg">
             <h1 className="text-2xl text-center">Contact Us</h1>

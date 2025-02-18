@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [selectedBook, setSelectedBook] = useState(null);
   const handleSelectedBook = (item) => {
-    navigate(`/book/${item.id}`, { state: item })
+    navigate(`/book/${item._id}`)
     setSelectedBook(item)
   }
 

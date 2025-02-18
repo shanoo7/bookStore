@@ -94,7 +94,7 @@ function Navbar({ setSearchTerm }) {
                         </div>
                         <div className='hidden md:block'>
                             <label className=" flex items-center gap-2">
-                                <input type="text" value={inputValue} v className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" onChange={(e) => setInputValue(e.target.value)} />
+                                <input type="text" value={inputValue} className="grow outline-none dark:bg-slate-700 dark:text-white border px-3 py-2 rounded" placeholder="Search" onChange={(e) => setInputValue(e.target.value)} />
                                 <button onClick={handleSearch} aria-label="Search books"><svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 16 16"
