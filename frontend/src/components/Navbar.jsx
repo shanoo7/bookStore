@@ -84,7 +84,7 @@ function Navbar({ setSearchTerm }) {
 
                             </ul>
                         </div>
-                        <Link to="/" className="btn btn-ghost text-xl">bookStore</Link>
+                        <Link to="/" className="btn btn-ghost text-xl">  <img className='w-12 h-auto' src='banner.webp' alt='Bookstore logo'></img></Link>
                     </div>
                     <div className="navbar-end space-x-3 ">
                         <div className="navbar-center hidden lg:flex">

@@ -19,7 +19,7 @@ function BookDetails() {
   <title>{selectedBook.name} Details</title>
   <meta name="description" content={`Detailed information about ${selectedBook.name} - ${selectedBook.title}`} />
 </Helmet>
-    <div className="max-w-screen-2xl h-screen pb-10  pt-5 container mx-auto md:px-20 px-4">
+    <div className="max-w-screen-4xl h-screen pb-10  pt-5 container mx-auto md:px-20 px-4">
       <h1 className="text-3xl font-bold mb-4">{selectedBook.name}</h1>
       <p className="text-lg mb-6">{selectedBook.title}</p>
       <img

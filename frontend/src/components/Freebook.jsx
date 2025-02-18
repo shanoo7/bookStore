@@ -73,7 +73,7 @@ function Freebook({searchTerm}) {
   };
   return (
     <>
-      <div className='max-w-screen-4xl mt-5 container mx-auto md:px-20 px-4'>
+      <div className='max-w-screen-4xl mt-5 container mx-auto md:px-20 px-8'>
         <h1 className='font-bold text-xl pb-2'>free offered courses</h1>
         <p className='text-justify'>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
        {
