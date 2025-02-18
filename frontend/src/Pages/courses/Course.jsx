@@ -21,10 +21,10 @@ function Course() {
   // console.log(list)
   return (
     <>
-   <Helmet>
-  <title>Browse All Courses</title>
-  <meta name="description" content="Explore our comprehensive collection of programming, design, and development courses." />
-</Helmet>
+      <Helmet>
+        <title>Browse All Courses</title>
+        <meta name="description" content="Explore our comprehensive collection of programming, design, and development courses." />
+      </Helmet>
       <div className='max-w-screen-2xl container  mx-auto md:px-20 px-4'>
         <div className='pt-20 item-center justify-center text-center'>
           <h1 className='text-2xl md:text-4xl'>We are delighted to welcome you to our
@@ -37,12 +37,18 @@ function Course() {
           </Link>
         </div>
 
-        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {book.map((item) => (
-            <div key={item._id} > {<Cards item={item} />}
+        {
+          book.length > 0 ?
+            <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+              {book.map((item) => (
+                <div key={item._id} > {<Cards item={item} />}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+            : <div className="flex items-center justify-center my-10 py-10">
+              <span className="bg-green-500 loading loading-spinner loading-lg"></span>
+            </div>
+        }
 
       </div>
     </>

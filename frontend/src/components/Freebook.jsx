@@ -6,16 +6,16 @@ import Slider from "react-slick";
 import Cards from './Cards';
 
 
-function Freebook({searchTerm}) {
+function Freebook({ searchTerm }) {
   const [book, setBook] = useState([])
-  const [filterBook,setFilterBook]=useState([])
-  
+  const [filterBook, setFilterBook] = useState([])
+
 
   useEffect(() => {
     const getData = async () => {
       try {
         const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
-        const data = res.data.filter((item) => item.category ==="free")
+        const data = res.data.filter((item) => item.category === "free")
         // console.log(data)
         setBook(data)
         setFilterBook(data)
@@ -76,20 +76,23 @@ function Freebook({searchTerm}) {
       <div className='max-w-screen-4xl mt-5 container mx-auto md:px-20 px-8'>
         <h1 className='font-bold text-xl pb-2'>free offered courses</h1>
         <p className='text-justify'>Here, you can explore a wide range of free courses designed to enhance your skills and knowledge. Browse through our collection, find what interests you, and take your learning journey to the next level. Discover the joy of learning with just a click!</p>
-       {
-        // filterBook.length>=1? 
-        <div>
-        <Slider {...settings}>
-          {filterBook.map((item) => (
-            <div key={item._id}>
-                <Cards item={item}  />
+        {
+          filterBook.length >= 1 ?
+            <div>
+              <Slider {...settings}>
+                {filterBook.map((item) => (
+                  <div key={item._id}>
+                    <Cards item={item} />
+                  </div>
+                ))}
+              </Slider>
             </div>
-          ))}
-        </Slider>
-        </div>
-        // :
-        // <h1 className='text-4xl text-center my-10 text-red-500'>Fetching books, please wait...</h1>
-       }
+            :
+            <div className="flex items-center justify-center my-10 py-10">
+              <span className="bg-green-500 loading loading-spinner loading-lg"></span>
+            </div>
+
+        }
       </div>
 
     </>

@@ -140,9 +140,8 @@ function Navbar({ setSearchTerm }) {
                         </div>
                         {
                             authUser ? <Logout />
-                                : <div className='py-2 bg-green-400 rounded hover:bg-green-300'>
-                                    <Link to={"/login"} className="cursor-pointer"><div className=' min-w-20 text-center'>Login</div></Link>
-
+                                : <div>
+                                    <Link to={"/login"}>  <button className='btn btn-sm btn-outline btn-success duration-300 min-w-20 text-center'>Login</button></Link>
                                 </div>
                         }
                     </div>
