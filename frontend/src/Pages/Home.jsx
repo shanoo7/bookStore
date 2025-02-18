@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from "../components/Navbar"
 import Banner from "../components/Banner"
 import Footer from "../components/Footer"
@@ -8,18 +8,18 @@ import { Helmet } from 'react-helmet-async'
 const Freebook = React.lazy(() => import("../components/Freebook"))
 
 function Home() {
-    const [searchTerm, setSearchTerm] = useState("")
+
     return (
         <>
-        <Helmet>
+            <Helmet>
                 <title>Home component</title>
                 <meta name='description' content='this is the Banner page'></meta>
-              </Helmet>
+            </Helmet>
             <div>
-                <Navbar setSearchTerm={setSearchTerm} />
+                <Navbar />
                 <Banner />
                 <Suspense fallback={<h1 className='text-3xl text-green-500 flex flex-col animate-spin items-center mt-20'><AiOutlineLoading3Quarters /></h1>} >
-                    <Freebook searchTerm={searchTerm} />
+                    <Freebook />
                 </Suspense>
 
                 <Footer />

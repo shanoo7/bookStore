@@ -4,11 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
+import { useAuth } from '../context/AuthProvider';
 
 
-function Freebook({ searchTerm }) {
+function Freebook() {
   const [book, setBook] = useState([])
   const [filterBook, setFilterBook] = useState([])
+  const {searchTerm} = useAuth()
 
 
   useEffect(() => {

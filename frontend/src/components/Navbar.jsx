@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthProvider';
 import Logout from '../Pages/Logout';
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../context/AuthProvider.jsx';
 
-function Navbar({ setSearchTerm }) {
+function Navbar() {
+
+    const {setSearchTerm} = useAuth()
 
     const navItems = (
         <>

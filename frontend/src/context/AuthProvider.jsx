@@ -24,8 +24,11 @@ export function AuthProvider({ children }) {
   const handleBuy = (item) => {
     toast.success(`Buying process started for ${item.name}`)
   }
+
+  //search function 
+  const [searchTerm, setSearchTerm] = useState("")
   return (
-    <AuthContext.Provider value={{ authUser, setAuthUser, selectedBook, setSelectedBook, handleSelectedBook, handleBuy }}>
+    <AuthContext.Provider value={{ authUser, setAuthUser, selectedBook, setSelectedBook, handleSelectedBook, handleBuy,searchTerm,setSearchTerm  }}>
       {children}
     </AuthContext.Provider>
   );

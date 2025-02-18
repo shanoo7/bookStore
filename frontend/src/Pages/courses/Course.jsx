@@ -3,8 +3,11 @@ import axios from "axios"
 import Cards from '../../components/Cards'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useAuth } from '../../context/AuthProvider'
 function Course() {
   const [book, setBook] = useState([])
+  const [filterBook, setFilterBook] = useState([])
+ const {searchTerm} = useAuth()
 
   useEffect(() => {
     const getBook = async () => {
@@ -12,12 +15,20 @@ function Course() {
         const res = await axios.get("https://bookstore-3-9rto.onrender.com/book")
         // console.log(res.data)
         setBook(res.data)
+        setFilterBook(res.data)
       } catch (error) {
         // console.log(error)
       }
     }
     getBook();
   }, [])
+
+  useEffect(() => {
+      const result = book.filter((book) =>
+        book.name?.toLowerCase().includes(searchTerm?.toLowerCase() || "")
+      );
+      setFilterBook(result);
+    }, [searchTerm, book]);
   // console.log(list)
   return (
     <>
@@ -40,7 +51,7 @@ function Course() {
         {
           book.length > 0 ?
             <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-              {book.map((item) => (
+              {filterBook.map((item) => (
                 <div key={item._id} > {<Cards item={item} />}
                 </div>
               ))}
