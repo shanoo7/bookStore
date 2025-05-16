@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+/* Base (light mode) */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: rgb(40, 65, 226);
+ 
+}
+
+.slick-dots li.slick-active button:before {
+  color: #03a4ed;
+}
+/* Tailwind-style dark mode */
+.dark .slick-dots li button:before {
+  color: rgb(244, 242, 242);
+}
+
+.dark .slick-dots li.slick-active button:before {
+  color: #ff695f;
+}

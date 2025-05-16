@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+/* In your component CSS module or global styles */
+.custom-slider .slick-dots li button:before {
+  color: white;
+}
+.custom-slider .slick-dots li.slick-active button:before {
+  color: #03a4ed;
+}
+
+/* Tailwind-style dark mode */
+.dark .slick-dots li button:before {
+  color: #aaa;
+}
+
+.dark .slick-dots li.slick-active button:before {
+  color: #ff695f;
+}
