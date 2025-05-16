@@ -22,7 +22,7 @@ function BookDetails() {
         />
       </Helmet>
 
-      <div className="max-w-screen-xl mx-auto mt-20">
+      <div className="max-w-screen-xl mx-auto my-15">
         <div className=" rounded-xl md:flex md:gap-10 flex-col md:flex-row">
 
           {/* Left: Image + Thumbnails */}
