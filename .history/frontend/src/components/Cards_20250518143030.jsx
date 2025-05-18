@@ -26,13 +26,13 @@ function Cards({ item }) {
             />
 
           </figure>
-          <div className="card-body ">
+          <div className="card-body border">
             <h2 className="card-title">
               {item.name}
               <div className="badge badge-secondary">{item.category}</div>
             </h2>
             <p className='text-xs'>{item.title}</p>
-            <div className="card-actions justify-evenly items-center">
+            <div className="card-actions border justify-evenly items-center text-[10px]">
               <div className="badge py-4 px-4">${item.price}</div>
               <button onClick={() => toggleWishlist(item)}><GoHeartFill className={` text-lg ${isLiked(item._id) ? " text-red-500" : ""}`} /></button>
               <button onClick={() => addToCart(item)}><BsCartFill className=' text-lg' /></button>

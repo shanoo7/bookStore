@@ -127,7 +127,7 @@ function Navbar() {
                             </Link>
                         </div>
 
-                        <div className=' text-2xl cursor-pointer'>
+                        <div className=' text-3xl cursor-pointer text-red-600'>
                             <Link to={"/wishlist-page"}>
                                 <BsHearts />
                             </Link>
